@@ -1,0 +1,15 @@
+{
+  "name": "YT-TV-Client-2.0",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Andrew Lee <alee14498@protonmail.com'>",
+  "license": "MIT",
+  "dependencies": {},
+  "scripts": {
+    "start": "electron ."
+  },
+  "devDependencies": {
+    "electron": "^13.1.9",
+    "electron-builder": "^22.11.7"
+  }
+}
