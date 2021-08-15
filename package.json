@@ -1,12 +1,13 @@
 {
-  "name": "YT-TV-Client-2.0",
-  "version": "1.0.0",
+  "name": "YouTubeTVClient",
+  "version": "2.0.0",
   "main": "index.js",
   "author": "Andrew Lee <alee14498@protonmail.com'>",
   "license": "GPL-3.0",
   "dependencies": {},
   "scripts": {
-    "start": "electron ."
+    "start": "electron .",
+    "build": "electron-builder -wl"
   },
   "devDependencies": {
     "electron": "^13.1.9",
