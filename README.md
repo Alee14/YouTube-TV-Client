@@ -8,3 +8,8 @@ Start the program
 yarn install
 yarn start
 ```
+
+# Navigating the website
+- Use the arrows on the keyboard to navigate
+- Press ESC to exit or to go back
+- Press enter to select
