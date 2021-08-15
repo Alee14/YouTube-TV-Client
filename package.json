@@ -5,7 +5,8 @@
   "author": "Andrew Lee <alee14498@protonmail.com>",
   "license": "GPL-3.0",
   "scripts": {
-    "start": "electron ."
+    "start": "electron .",
+    "dist": "electron-builder"
   },
   "devDependencies": {
     "electron": "^13.1.9",
@@ -36,7 +37,8 @@
       "target": [
         "zip",
         "dmg"
-      ]
+      ],
+      "category": "Video"
     }
   }
 }
