@@ -13,6 +13,12 @@ jobs:
         os: [macos-latest, ubuntu-latest, windows-latest]
 
     steps:
+      - name: Install dependencies
+        if: runner.os == 'Linux'
+        run: | 
+        sudo apt update
+        sudo apt install --no-install-recommends -y libopenjp2-tools rpm bsdtar
+        sudo snap install snapcraft --classic
       - name: Check out Git repository
         uses: actions/checkout@v1
 
