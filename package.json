@@ -1,8 +1,8 @@
 {
-  "name": "YouTube-TV-Client",
+  "name": "youtube-tv-client",
   "version": "2.0.0",
   "main": "index.js",
-  "author": "Andrew Lee <alee14498@protonmail.com'>",
+  "author": "Andrew Lee <alee14498@protonmail.com>",
   "license": "GPL-3.0",
   "scripts": {
     "start": "electron .",
@@ -17,11 +17,21 @@
     "productName": "YouTube TV Client",
     "copyright": "© Copyright 2017-2021, Andrew Lee",
     "linux": {
-      "target": "default",
+      "target": [
+        "appimage",
+        "snap",
+        "rpm",
+        "pacman",
+        "deb"
+      ],
       "category": "Video"
     },
     "win": {
-      "target": "portable"
+      "target": [
+        "zip",
+        "portable",
+        "nsis"
+      ]
     },
     "mac": {
       "target": "zip"

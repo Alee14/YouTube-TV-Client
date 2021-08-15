@@ -18,6 +18,7 @@ function fetchCookie(){
         url: URL
     });
 }
+
 app.whenReady().then(() => {
     console.log("Started YouTube TV Client 2.0");
     createWindow();
