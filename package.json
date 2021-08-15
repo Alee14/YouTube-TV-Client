@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "author": "Andrew Lee <alee14498@protonmail.com'>",
-  "license": "MIT",
+  "license": "GPL-3.0",
   "dependencies": {},
   "scripts": {
     "start": "electron ."
