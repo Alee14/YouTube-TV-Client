@@ -10,6 +10,12 @@ function createWindow() {
     win.loadURL('https://youtube.com/tv');
 }
 
+function fetchCookie(){
+    session.defaultSession.cookies.get({
+        url: 'https://youtube.com/tv'
+    });
+}
+
 function cookieDump(cookies) {
     var buffer = '['
     for (let cookie of cookies) {
@@ -28,9 +34,7 @@ app.whenReady().then(() => {
     console.log("Started YouTube TV Client 2.0");
     createWindow();
 
-    session.defaultSession.cookies.get({
-        url: 'https://youtube.com/tv'
-    });
+    fetchCookie();
 
     session.defaultSession.webRequest.onBeforeSendHeaders((details, callback) => {
         details.requestHeaders['User-Agent'] = 'Mozilla/5.0 (Linux; Tizen 2.3) AppleWebKit/538.1 (KHTML, like Gecko)Version/2.3 TV Safari/538.1';
@@ -46,9 +50,7 @@ app.whenReady().then(() => {
 
 app.on('window-all-closed', function () {
     if (process.platform !== 'darwin') app.quit();
-    session.defaultSession.cookies.get({
-        url: 'https://youtube.com/tv'
-    })
+    fetchCookie()
         .then((cookies) => {
             cookieDump(cookies);
             console.log("Wrote Cookies");
