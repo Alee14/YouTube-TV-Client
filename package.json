@@ -1,5 +1,6 @@
 {
   "name": "youtube-tv-client",
+  "description": "A web client where it goes to youtube.com/tv",
   "version": "2.0.0",
   "main": "index.js",
   "author": "Andrew Lee <alee14498@protonmail.com>",
@@ -18,6 +19,7 @@
     "copyright": "© Copyright 2017-2021, Andrew Lee",
     "linux": {
       "target": [
+        "tar.gz",
         "appimage",
         "snap",
         "rpm",
