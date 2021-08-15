@@ -1,45 +1,33 @@
 const { app, BrowserWindow, session } = require('electron')
+const userAgent = "Mozilla/5.0 (Linux; Tizen 2.3) AppleWebKit/538.1 (KHTML, like Gecko)Version/2.3 TV Safari/538.1";
+const URL = "https://youtube.com/tv"
+
 function createWindow() {
     const win = new BrowserWindow({
-        width: 800,
-        height: 600,
         fullscreen: true,
         autoHideMenuBar: true
     })
 
-    win.loadURL('https://youtube.com/tv');
+    win.loadURL(URL);
+    console.log("Loading " + URL)
 }
 
 function fetchCookie(){
+    console.log("Fetching cookies...")
     session.defaultSession.cookies.get({
-        url: 'https://youtube.com/tv'
+        url: URL
     });
 }
-
-function cookieDump(cookies) {
-    var buffer = '['
-    for (let cookie of cookies) {
-        console.log(cookie)
-        buffer += JSON.stringify(cookie)
-        buffer += ","
-    }
-    buffer = buffer.slice(0, -1) + "]"
-    fs.writeFile('cookies.json', buffer, function (err) {
-        if (err) return console.log(err);
-        console.log('Wrote cookies to file');
-    });
-}
-
 app.whenReady().then(() => {
     console.log("Started YouTube TV Client 2.0");
     createWindow();
-
     fetchCookie();
 
     session.defaultSession.webRequest.onBeforeSendHeaders((details, callback) => {
-        details.requestHeaders['User-Agent'] = 'Mozilla/5.0 (Linux; Tizen 2.3) AppleWebKit/538.1 (KHTML, like Gecko)Version/2.3 TV Safari/538.1';
+        details.requestHeaders['User-Agent'] = userAgent;
         callback({ cancel: false, requestHeaders: details.requestHeaders });
       });  
+    console.log("User Agent has been set to \"" + userAgent + "\"")
 
     app.on('activate', function () {
         if (BrowserWindow.getAllWindows().length === 0) createWindow();
@@ -50,12 +38,4 @@ app.whenReady().then(() => {
 
 app.on('window-all-closed', function () {
     if (process.platform !== 'darwin') app.quit();
-    fetchCookie()
-        .then((cookies) => {
-            cookieDump(cookies);
-            console.log("Wrote Cookies");
-        }).catch((error) => {
-            console.log(error);
-    });
-    
 });
