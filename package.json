@@ -5,8 +5,7 @@
   "author": "Andrew Lee <alee14498@protonmail.com>",
   "license": "GPL-3.0",
   "scripts": {
-    "start": "electron .",
-    "build": "electron-builder -lwm"
+    "start": "electron ."
   },
   "devDependencies": {
     "electron": "^13.1.9",
@@ -34,7 +33,10 @@
       ]
     },
     "mac": {
-      "target": "zip"
+      "target": [
+        "zip",
+        "dmg"
+      ]
     }
   }
 }
