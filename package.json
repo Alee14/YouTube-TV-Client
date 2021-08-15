@@ -30,8 +30,7 @@
         "zip",
         "portable",
         "nsis"
-      ],
-      "license": "LICENSE"
+      ]
     },
     "mac": {
       "target": [
