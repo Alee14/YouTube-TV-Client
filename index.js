@@ -5,7 +5,8 @@ const URL = "https://youtube.com/tv"
 function createWindow() {
     const win = new BrowserWindow({
         fullscreen: true,
-        autoHideMenuBar: true
+        autoHideMenuBar: true,
+        icon: __dirname + "/build/icon.png"
     })
 
     win.loadURL(URL);
