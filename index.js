@@ -1,16 +1,19 @@
-const { app, BrowserWindow, session } = require('electron')
-const userAgent = "Mozilla/5.0 (Linux; Tizen 2.3) AppleWebKit/538.1 (KHTML, like Gecko)Version/2.3 TV Safari/538.1";
-const URL = "https://youtube.com/tv"
+const { app, BrowserWindow, session } = require('electron');
+const package = require("./package.json");
+
+const userAgent = "Mozilla/5.0 (Linux; Tizen 2.3) "+ package.name + "/" + package.version + " AppleWebKit/538.1 (KHTML, like Gecko)Version/2.3 TV Safari/538.1";
+const URL = "https://youtube.com";
 
 function createWindow() {
     const win = new BrowserWindow({
         fullscreen: true,
         autoHideMenuBar: true,
         icon: __dirname + "/build/icon.png"
-    })
+    });
 
     win.loadURL(URL);
-    console.log("Loading " + URL)
+    console.log("Loading " + URL);
+
 }
 
 function fetchCookie(){
@@ -21,7 +24,7 @@ function fetchCookie(){
 }
 
 app.whenReady().then(() => {
-    console.log("Started YouTube TV Client 2.0");
+    console.log("Started YouTube TV Client " + package.version);
     createWindow();
     fetchCookie();
 
@@ -29,7 +32,7 @@ app.whenReady().then(() => {
         details.requestHeaders['User-Agent'] = userAgent;
         callback({ cancel: false, requestHeaders: details.requestHeaders });
       });  
-    console.log("User Agent has been set to \"" + userAgent + "\"")
+    console.log("User Agent has been set to \"" + userAgent + "\"");
 
     app.on('activate', function () {
         if (BrowserWindow.getAllWindows().length === 0) createWindow();
