@@ -9,6 +9,11 @@ yarn install
 yarn start
 ```
 
+Build the program into an executable
+```
+yarn dist
+```
+
 # Navigating the website
 - Use the arrows on the keyboard to navigate
 - Press ESC to exit or to go back
