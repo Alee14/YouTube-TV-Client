@@ -23,7 +23,7 @@ jobs:
 
       - name: Installing dependencies for Ubuntu
         if: startsWith(matrix.os, 'ubuntu')
-        run: sudo apt update && sudo apt install --no-install-recommends -y libopenjp2-tools rpm libarchive-tools
+        run: sudo apt install --no-install-recommends -y libopenjp2-tools rpm libarchive-tools
       - name: Check out Git repository
         uses: actions/checkout@v1
 
