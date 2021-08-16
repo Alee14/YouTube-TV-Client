@@ -2,7 +2,7 @@ const { app, BrowserWindow, session } = require('electron');
 const package = require("./package.json");
 
 const userAgent = "Mozilla/5.0 (Linux; Tizen 2.3) "+ package.name + "/" + package.version + " AppleWebKit/538.1 (KHTML, like Gecko)Version/2.3 TV Safari/538.1";
-const URL = "https://youtube.com";
+const URL = "https://youtube.com/tv";
 
 function createWindow() {
     const win = new BrowserWindow({
