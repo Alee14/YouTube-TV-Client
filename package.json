@@ -31,7 +31,7 @@
         "deb"
       ],
       "category": "Video",
-      "publish": ["snapStore", "github"]
+      "publish": ["github"]
     },
     "win": {
       "target": [
