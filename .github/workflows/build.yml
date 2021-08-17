@@ -24,7 +24,7 @@ jobs:
       - name: Installing dependencies for Ubuntu
         if: startsWith(matrix.os, 'ubuntu')
         run: sudo apt install --no-install-recommends -y libopenjp2-tools rpm libarchive-tools
-        
+
       - name: Check out Git repository
         uses: actions/checkout@v1
 
@@ -39,6 +39,10 @@ jobs:
           # GitHub token, automatically provided to the action
           # (No need to define this secret in the repo settings)
           github_token: ${{ secrets.github_token }}
+
+          args: "--x64 --armv7l --arm64"
+          
+          max_attempts: "3"
 
           # If the commit is tagged with a version (e.g. "v1.0.0"),
           # release the app after building
