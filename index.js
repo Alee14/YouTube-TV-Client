@@ -1,5 +1,10 @@
 const { app, BrowserWindow, session } = require('electron');
+const { autoUpdater } = require("electron-updater");
+const log = require('electron-log');
 const package = require("./package.json");
+
+autoUpdater.logger = log;
+autoUpdater.logger.transports.file.level = 'info';
 
 const userAgent = "Mozilla/5.0 (Linux; Tizen 2.3) "+ package.name + "/" + package.version + " AppleWebKit/538.1 (KHTML, like Gecko)Version/2.3 TV Safari/538.1";
 const URL = "https://youtube.com/tv";
@@ -23,6 +28,10 @@ function fetchCookie(){
     });
 }
 
+app.on('ready', function() {
+    autoUpdater.checkForUpdatesAndNotify();
+});
+
 app.whenReady().then(() => {
     console.log("Started YouTube TV Client " + package.version);
     createWindow();
@@ -40,6 +49,33 @@ app.whenReady().then(() => {
 
   });
 
+  autoUpdater.on('checking-for-update', () => {
+    console.log('Checking for updates...');
+  });
+
+  autoUpdater.on('update-available', () => {
+    console.log('Update available.');
+  });
+
+
+  autoUpdater.on('update-not-available', () => {
+    console.log('No updates are currently available...');
+  });
+
+  autoUpdater.on('error', (err) => {
+    console.log('Error in auto-updater. ' + err);
+  });
+
+  autoUpdater.on('download-progress', (progressObj) => {
+    let log_message = "Download speed: " + progressObj.bytesPerSecond;
+    log_message = log_message + ' - Downloaded ' + progressObj.percent + '%';
+    log_message = log_message + ' (' + progressObj.transferred + "/" + progressObj.total + ')';
+    console.log(log_message);
+  });
+
+  autoUpdater.on('update-downloaded', (info) => {
+    console.log('Update downloaded');
+  });
 
 app.on('window-all-closed', function () {
     if (process.platform !== 'darwin') app.quit();

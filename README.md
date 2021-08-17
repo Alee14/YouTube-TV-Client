@@ -1,6 +1,10 @@
 # YouTube TV Client 2.0
 Basically a browser that uses Samsung Smart TV as the user agent and it goes to `youtube.com/tv`.
 
+<a href="https://snapcraft.io/youtube-tv-client">
+  <img alt="Get it from the Snap Store" src="https://snapcraft.io/static/images/badges/en/snap-store-black.svg" />
+</a>
+
 Made from NodeJS and Electron
 
 Start the program
