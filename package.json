@@ -1,7 +1,7 @@
 {
   "name": "youtube-tv-client",
   "description": "A web client where it goes to youtube.com/tv",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "main": "index.js",
   "author": "Andrew Lee <alee14498@protonmail.com>",
   "license": "GPL-3.0",
