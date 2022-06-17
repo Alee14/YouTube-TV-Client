@@ -14,7 +14,7 @@
     "electron-updater": "^4.3.9"
   },
   "devDependencies": {
-    "electron": "^13.3.0",
+    "electron": "^15.5.5",
     "electron-builder": "^22.11.7"
   },
   "build": {
