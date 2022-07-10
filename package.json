@@ -10,12 +10,12 @@
     "dist": "electron-builder"
   },
   "dependencies": {
-    "electron-log": "^4.4.1",
-    "electron-updater": "^4.3.9"
+    "electron-log": "^4.4.8",
+    "electron-updater": "^5.0.5"
   },
   "devDependencies": {
-    "electron": "^13.3.0",
-    "electron-builder": "^22.11.7"
+    "electron": "^19.0.8",
+    "electron-builder": "^23.1.0"
   },
   "build": {
     "appId": "me.alee14.ytvclient",
