@@ -20,7 +20,7 @@
   "build": {
     "appId": "me.alee14.ytvclient",
     "productName": "YouTube TV Client",
-    "copyright": "© Copyright 2017-20222, Andrew Lee",
+    "copyright": "© Copyright 2017-2022, Andrew Lee",
     "linux": {
       "target": [
         "tar.gz",
