@@ -1,4 +1,4 @@
-# YouTube TV Client 2.0
+# YouTube TV Client 2.0 (YouTube Leanback)
 Basically a browser that uses Samsung Smart TV as the user agent and it goes to `youtube.com/tv`.
 
 <a href="https://snapcraft.io/youtube-tv-client">
