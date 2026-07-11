@@ -1,3 +1,6 @@
+# DISCONTINUED. USE VACUUMTUBE INSTEAD
+Decided to discontinue this project as VacuumTube does the job better than this project.
+Repo Link: https://github.com/shy1132/VacuumTube
 # YouTube TV Client 2.0 (YouTube Leanback)
 Basically a browser that uses Samsung Smart TV as the user agent and it goes to `youtube.com/tv`.
 
